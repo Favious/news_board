@@ -1,0 +1,36 @@
+<h2>
+  ¡Añade un nuevo anuncio!
+</h2>
+
+<form [formGroup]="pinForm" (submit)="submitPin()">
+  <mat-form-field appearance="fill">
+    <mat-label>Anuncio</mat-label>
+    <textarea cdkTextareaAutosize formControlName="content" matInput cdkAutosizeMinRows="10" cdkAutosizeMaxRows="40"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Duracion(en dias)</mat-label>
+    <input formControlName="duration" type="number" min="1" max="31" matInput>
+  </mat-form-field>
+  <div formGroupName="contactInfo">
+    <mat-form-field appearance="fill">
+      <mat-label>Numero de Telefono</mat-label>
+      <input formControlName="telephoneNumber" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Whatsapp</mat-label>
+      <input formControlName="whatsapp" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Direccion</mat-label>
+      <textarea formControlName="direction" matInput></textarea>
+    </mat-form-field>
+  </div>
+  <br>
+  <button mat-raised-button color="primary" (click)="closeDialog()" type="button">Cancelar</button>
+  <button mat-raised-button color="primary" type="submit" style="float: right;" disabled="{{disableSubmit()}}">Confirmar</button>
+</form>

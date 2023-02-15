@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+    <div class="time">{{ creationDate() }}</div>
+    <div class="content">{{ data.content }}</div>
+    <div *ngIf="showContactInfo()" class="contact-info">
+        <b>Información del Contacto:</b><br>
+        <br>
+        <p *ngIf="data.contactInfo.telephoneNumber">Numero de Telefono: {{data.contactInfo.telephoneNumber}}</p>
+        <p *ngIf="data.contactInfo.whatsapp">Whatsapp: {{data.contactInfo.whatsapp}}</p>
+        <p *ngIf="data.contactInfo.email">Email: {{data.contactInfo.email}}</p>
+        <p *ngIf="data.contactInfo.direction">Direccion: {{data.contactInfo.direction}}</p>
+     </div>
+</div>

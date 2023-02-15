@@ -1,0 +1,16 @@
+<button (click)="addPin()" class="new-pin">AGREGAR PIN</button>
+<div class="rectangle">
+  <div 
+    *ngFor="let pin of pins" 
+    class="pin" 
+    cdkDrag 
+    [cdkDragData]="pin" 
+    [cdkDragFreeDragPosition]="pin.position"
+    cdkDragBoundary=".rectangle"
+    (cdkDragEnded)="onDragEnded($event)">
+      <div class="dot" cdkDragHandle></div>
+      <div class="time">{{ creationDate(pin) }}</div>
+      <div class="content">{{ pin.content }}</div>
+      <button (click)="openDialog(pin)" class="pin-zoom">+</button>
+  </div>
+</div>
